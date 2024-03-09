@@ -3,11 +3,22 @@ package com.ascenda.hotels.data.functional
 import com.ascenda.hotels.data.client.HotelSupplierClient
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
-//TODO: Use mockserver docker instead of calling real api endpoints
 class HotelSupplierClientTests : FunctionalTestBase() {
+    @BeforeEach
+    fun setUp() {
+        hotelServersStub.stub()
+    }
+
+    @AfterEach
+    fun tearDown() {
+        hotelServersStub.reset()
+    }
+
     @Autowired
     lateinit var hotelSupplierClient: HotelSupplierClient
 
