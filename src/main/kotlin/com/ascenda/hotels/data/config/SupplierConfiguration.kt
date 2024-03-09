@@ -8,5 +8,5 @@ data class SupplierConfiguration(
 )
 
 enum class SupplierName {
-    ACME, PATAGONIA, PAPERFLIES
+    ACME, PATAGONIA, PAPERFLY
 }
