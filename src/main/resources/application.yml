@@ -1,0 +1,12 @@
+web-client:
+  urlMap:
+    ACME: https://5f2be0b4ffc88500167b85a0.mockapi.io/suppliers/acme
+    PATAGONIA: https://5f2be0b4ffc88500167b85a0.mockapi.io/suppliers/patagonia
+    PAPERFLIES: https://5f2be0b4ffc88500167b85a0.mockapi.io/suppliers/paperflies
+
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: health
