@@ -25,6 +25,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mock-server:mockserver-client-java:5.15.0'
 	testImplementation 'org.testcontainers:mockserver:1.19.7'
+	testImplementation 'org.mockito.kotlin:mockito-kotlin:5.1.0'
 }
 
 tasks.withType(KotlinCompile) {

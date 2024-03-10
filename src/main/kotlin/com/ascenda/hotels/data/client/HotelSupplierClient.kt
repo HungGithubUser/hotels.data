@@ -14,19 +14,22 @@ class HotelSupplierClient(
 ) {
     fun getAcmeHotels(): List<AcmeHotel> {
         return restTemplate.getForEntity(
-            supplierConfiguration.urlMap[ACME]!!, Array<AcmeHotel>::class.java
+            supplierConfiguration.urlMap[ACME]!!,
+            Array<AcmeHotel>::class.java
         ).body!!.toList()
     }
 
     fun getPatagoniaHotels(): List<PatagoniaHotel> {
         return restTemplate.getForEntity(
-            supplierConfiguration.urlMap[PATAGONIA]!!, Array<PatagoniaHotel>::class.java
+            supplierConfiguration.urlMap[PATAGONIA]!!,
+            Array<PatagoniaHotel>::class.java
         ).body!!.toList()
     }
 
     fun getPaperFlyHotels(): List<PaperFlyHotel> {
         return restTemplate.getForEntity(
-            supplierConfiguration.urlMap[PAPERFLY]!!, Array<PaperFlyHotel>::class.java
+            supplierConfiguration.urlMap[PAPERFLY]!!,
+            Array<PaperFlyHotel>::class.java
         ).body!!.toList()
     }
 }

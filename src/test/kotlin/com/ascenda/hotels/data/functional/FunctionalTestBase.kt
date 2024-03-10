@@ -1,5 +1,6 @@
 package com.ascenda.hotels.data.functional
 
+import com.ascenda.hotels.data.config.ResourceLoader
 import com.ascenda.hotels.data.config.SupplierName
 import org.mockserver.client.MockServerClient
 import org.mockserver.configuration.ClientConfiguration
@@ -9,14 +10,12 @@ import org.mockserver.model.JsonBody
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.core.io.DefaultResourceLoader
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 import org.springframework.test.web.servlet.MockMvc
 import org.testcontainers.containers.MockServerContainer
 import org.testcontainers.utility.DockerImageName
-import java.nio.charset.Charset
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -97,9 +96,3 @@ class HotelServersStub(private val mockServer: MockServerContainer) {
     }
 }
 
-object ResourceLoader {
-    private val loader = DefaultResourceLoader()
-    fun loadAsString(location: String): String {
-        return loader.getResource(location).getContentAsString(Charset.defaultCharset())
-    }
-}
