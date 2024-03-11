@@ -2,8 +2,7 @@ package com.ascenda.hotels.data.unit.service.converter
 
 import com.ascenda.hotels.data.service.converter.AcmeHotelConverter
 import com.ascenda.hotels.data.fixture.HotelFixture
-import org.hamcrest.MatcherAssert
-import org.hamcrest.MatcherAssert.*
+import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers
 import org.junit.jupiter.api.Test
 

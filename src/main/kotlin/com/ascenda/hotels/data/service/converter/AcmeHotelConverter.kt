@@ -5,13 +5,16 @@ import com.ascenda.hotels.data.service.model.Amenities
 import com.ascenda.hotels.data.service.model.Hotel
 import com.ascenda.hotels.data.service.model.Images
 import com.ascenda.hotels.data.service.model.Location
+import com.google.common.base.CaseFormat
+import org.springframework.stereotype.Component
 
+@Component
 class AcmeHotelConverter(private val codeToCountryMap: Map<String, String>) {
     fun convert(acmeHotel: AcmeHotel): Hotel {
         return Hotel(
             id = acmeHotel.id,
             destinationId = acmeHotel.destinationId,
-            location =  Location.init(
+            location = Location.init(
                 latitude = acmeHotel.latitude,
                 longitude = acmeHotel.longitude,
                 address = acmeHotel.address,
@@ -20,7 +23,9 @@ class AcmeHotelConverter(private val codeToCountryMap: Map<String, String>) {
             ),
             name = acmeHotel.name,
             amenities = Amenities.init(
-                general = acmeHotel.amenities,
+                general = acmeHotel.amenities.map {
+                    CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_HYPHEN, it.trim()).replace("-", " ")
+                },
                 room = emptyList()
             ),
             description = acmeHotel.description.trim(),

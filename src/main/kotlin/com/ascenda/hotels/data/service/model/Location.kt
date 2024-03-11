@@ -10,6 +10,16 @@ data class Location(
     val city: String,
     val country: String
 ) {
+    operator fun plus(location: Location): Location {
+        return Location(
+            latitude ?: location.latitude,
+            longitude ?: location.longitude,
+            address.ifEmpty { location.address },
+            city.ifEmpty { location.city },
+            country.ifEmpty { location.country },
+        )
+    }
+
     companion object {
         fun init(
             latitude: String?,

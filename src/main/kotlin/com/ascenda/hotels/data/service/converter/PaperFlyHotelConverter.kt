@@ -2,7 +2,9 @@ package com.ascenda.hotels.data.service.converter
 
 import com.ascenda.hotels.data.client.response.PaperFlyHotel
 import com.ascenda.hotels.data.service.model.*
+import org.springframework.stereotype.Component
 
+@Component
 class PaperFlyHotelConverter {
     fun convert(paperFlyHotel: PaperFlyHotel): Hotel {
         return Hotel(

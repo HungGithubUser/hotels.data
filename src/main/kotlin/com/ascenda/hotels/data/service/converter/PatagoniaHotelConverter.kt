@@ -2,7 +2,9 @@ package com.ascenda.hotels.data.service.converter
 
 import com.ascenda.hotels.data.client.response.PatagoniaHotel
 import com.ascenda.hotels.data.service.model.*
+import org.springframework.stereotype.Component
 
+@Component
 class PatagoniaHotelConverter {
     fun convert(patagoniaHotel: PatagoniaHotel): Hotel {
         return Hotel(
@@ -17,8 +19,8 @@ class PatagoniaHotelConverter {
             ),
             name = patagoniaHotel.name,
             amenities = Amenities.init(
-                general = patagoniaHotel.amenities ?: emptyList(),
-                room = emptyList()
+                general = emptyList(),
+                room = patagoniaHotel.amenities
             ),
             description = patagoniaHotel.description?.trim() ?: EMPTY_FALLBACK_STRING,
             images = Images(
