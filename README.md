@@ -1,6 +1,6 @@
 # Hotels data merge
 ## Introduction
-Ascenda excersice in response to https://gist.github.com/Weiyuan-Lane/f5ba818ce89238faf6d9db01b3e4c819
+Ascenda exercise in response to https://gist.github.com/Weiyuan-Lane/f5ba818ce89238faf6d9db01b3e4c819
 
 ## Environment
 - Java - Jdk 17
