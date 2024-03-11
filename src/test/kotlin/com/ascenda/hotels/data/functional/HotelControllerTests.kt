@@ -5,6 +5,13 @@ import org.springframework.test.web.servlet.get
 
 class HotelControllerTests : FunctionalTestBase() {
     @Test
+    fun `Get beach villas should success`() {
+        mockMvc.get("/hotels").andExpect {
+            status { isOk() }
+        }
+    }
+
+    @Test
     fun `Get beach villas by destination should success`() {
         mockMvc.get("/hotels?destinationId=5432").andExpect {
             status { isOk() }

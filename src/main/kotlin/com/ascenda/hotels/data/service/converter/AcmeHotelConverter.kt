@@ -23,9 +23,7 @@ class AcmeHotelConverter(private val codeToCountryMap: Map<String, String>) {
             ),
             name = acmeHotel.name,
             amenities = Amenities.init(
-                general = acmeHotel.amenities.map {
-                    CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_HYPHEN, it.trim()).replace("-", " ")
-                },
+                general = acmeHotel.amenities.map { convertFromCamelCaseToWhiteSpaceCase(it) },
                 room = emptyList()
             ),
             description = acmeHotel.description.trim(),
@@ -37,4 +35,7 @@ class AcmeHotelConverter(private val codeToCountryMap: Map<String, String>) {
             bookingConditions = emptyList(),
         )
     }
+
+    private fun convertFromCamelCaseToWhiteSpaceCase(it: String) =
+        CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_HYPHEN, it.trim()).replace("-", " ")
 }
