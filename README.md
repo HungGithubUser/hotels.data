@@ -2,6 +2,8 @@
 ## Introduction
 Ascenda exercise in response to https://gist.github.com/Weiyuan-Lane/f5ba818ce89238faf6d9db01b3e4c819
 
+[![Build Status](https://github.com/HungGithubUser/hotels.data/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/HungGithubUser/hotels.data)
+
 ## Environment
 - Java - Jdk 17
 - Docker - For integration test
