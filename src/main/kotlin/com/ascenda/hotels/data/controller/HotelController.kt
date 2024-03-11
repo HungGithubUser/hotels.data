@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class HotelController(private val hotelService: HotelService) {
-    @GetMapping(path = ["hotels"])
+    @GetMapping(path = ["v1/hotels"])
     fun hotels(
         @RequestParam("destination") destinationId: Long?,
         @RequestParam("hotelIds") hotelIds: List<String>?
