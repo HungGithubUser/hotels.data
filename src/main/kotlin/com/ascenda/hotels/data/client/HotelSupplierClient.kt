@@ -5,31 +5,36 @@ import com.ascenda.hotels.data.client.response.PaperFlyHotel
 import com.ascenda.hotels.data.client.response.PatagoniaHotel
 import com.ascenda.hotels.data.config.SupplierConfiguration
 import com.ascenda.hotels.data.config.SupplierName.*
+import org.springframework.http.MediaType
+import org.springframework.http.MediaType.APPLICATION_JSON
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestTemplate
+import org.springframework.web.reactive.function.client.WebClient
+import org.springframework.web.reactive.function.client.awaitBody
 
 @Service
 class HotelSupplierClient(
-    private val supplierConfiguration: SupplierConfiguration, private val restTemplate: RestTemplate
+    private val supplierConfiguration: SupplierConfiguration,
+    private val webClient: WebClient
 ) {
-    fun getAcmeHotels(): List<AcmeHotel> {
-        return restTemplate.getForEntity(
-            supplierConfiguration.urlMap[ACME]!!,
-            Array<AcmeHotel>::class.java
-        ).body!!.toList()
+    suspend fun getAcmeHotels(): List<AcmeHotel> {
+        return webClient.get().uri(supplierConfiguration.urlMap[ACME]!!)
+            .accept(APPLICATION_JSON)
+            .retrieve()
+            .awaitBody<List<AcmeHotel>>()
     }
 
-    fun getPatagoniaHotels(): List<PatagoniaHotel> {
-        return restTemplate.getForEntity(
-            supplierConfiguration.urlMap[PATAGONIA]!!,
-            Array<PatagoniaHotel>::class.java
-        ).body!!.toList()
+    suspend fun getPatagoniaHotels(): List<PatagoniaHotel> {
+        return webClient.get().uri(supplierConfiguration.urlMap[PATAGONIA]!!)
+            .accept(APPLICATION_JSON)
+            .retrieve()
+            .awaitBody<List<PatagoniaHotel>>()
     }
 
-    fun getPaperFlyHotels(): List<PaperFlyHotel> {
-        return restTemplate.getForEntity(
-            supplierConfiguration.urlMap[PAPERFLY]!!,
-            Array<PaperFlyHotel>::class.java
-        ).body!!.toList()
+    suspend fun getPaperFlyHotels(): List<PaperFlyHotel> {
+        return webClient.get().uri(supplierConfiguration.urlMap[PAPERFLY]!!)
+            .accept(APPLICATION_JSON)
+            .retrieve()
+            .awaitBody<List<PaperFlyHotel>>()
     }
 }

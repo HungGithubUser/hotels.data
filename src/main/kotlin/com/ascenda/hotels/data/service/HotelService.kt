@@ -16,7 +16,7 @@ class HotelService(
     private val paperFlyHotelConverter: PaperFlyHotelConverter,
     private val hotelMerger: HotelMerger
 ) {
-    fun getHotels(): List<Hotel> {
+    suspend fun getHotels(): List<Hotel> {
         return hotelMerger.merge(
             hotelSupplierClient.getAcmeHotels().map { acmeHotelConverter.convert(it) } +
                     hotelSupplierClient.getPatagoniaHotels().map { patagoniaHotelConverter.convert(it) } +

@@ -1,27 +1,33 @@
 package com.ascenda.hotels.data.functional
 
 import org.junit.jupiter.api.Test
-import org.springframework.test.web.servlet.get
+import org.springframework.http.MediaType
 
 class HotelControllerTests : FunctionalTestBase() {
     @Test
     fun `Get beach villas should success`() {
-        mockMvc.get("/v1/hotels").andExpect {
-            status { isOk() }
-        }
+        webTestClient.get()
+            .uri("/v1/hotels")
+            .accept(MediaType.APPLICATION_JSON)
+            .exchange()
+            .expectStatus().isOk()
     }
 
     @Test
     fun `Get beach villas by destination should success`() {
-        mockMvc.get("/v1/hotels?destinationId=5432").andExpect {
-            status { isOk() }
-        }
+        webTestClient.get()
+            .uri("/v1/hotels?destinationId=5432")
+            .accept(MediaType.APPLICATION_JSON)
+            .exchange()
+            .expectStatus().isOk()
     }
 
     @Test
     fun `Get beach villas by hotelIds should success`() {
-        mockMvc.get("/v1/hotels?hotelIds=iJhz").andExpect {
-            status { isOk() }
-        }
+        webTestClient.get()
+            .uri("/v1/hotels?destinationId=iJhz")
+            .accept(MediaType.APPLICATION_JSON)
+            .exchange()
+            .expectStatus().isOk()
     }
 }

@@ -1,6 +1,7 @@
 package com.ascenda.hotels.data.functional
 
 import com.ascenda.hotels.data.client.HotelSupplierClient
+import kotlinx.coroutines.runBlocking
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
 import org.junit.jupiter.api.AfterEach
@@ -23,19 +24,19 @@ class HotelSupplierClientTests : FunctionalTestBase() {
     lateinit var hotelSupplierClient: HotelSupplierClient
 
     @Test
-    fun `should getAcmeHotels successfully`() {
+    fun `should getAcmeHotels successfully`() = runBlocking {
         val acmeHotels = hotelSupplierClient.getAcmeHotels()
         assertThat(acmeHotels.isEmpty(),equalTo(false))
     }
 
     @Test
-    fun `should getPatagoniaHotels successfully`() {
+    fun `should getPatagoniaHotels successfully`() = runBlocking {
         val patagoniaHotels = hotelSupplierClient.getPatagoniaHotels()
         assertThat(patagoniaHotels.isEmpty(),equalTo(false))
     }
 
     @Test
-    fun `should getPaperFlyHotels successfully`() {
+    fun `should getPaperFlyHotels successfully`() = runBlocking {
         val paperFlyHotels = hotelSupplierClient.getPaperFlyHotels()
         assertThat(paperFlyHotels.isEmpty(),equalTo(false))
     }

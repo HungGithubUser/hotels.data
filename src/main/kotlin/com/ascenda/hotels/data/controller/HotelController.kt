@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class HotelController(private val hotelService: HotelService) {
     @GetMapping(path = ["v1/hotels"])
-    fun hotels(
+    suspend fun hotels(
         @RequestParam("destination") destinationId: Long?,
         @RequestParam("hotelIds") hotelIds: List<String>?
     ): List<HotelResponse> {
         return HotelQueryBuilder()
             .withDestinationId(destinationId)
             .withIdIn(hotelIds)
-            .getHotels(hotelService)
+            .apply(hotelService.getHotels())
             .map { HotelResponse(it) }
     }
 }

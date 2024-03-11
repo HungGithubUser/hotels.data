@@ -5,8 +5,8 @@ import com.ascenda.hotels.data.service.model.Hotel
 class HotelQueryBuilder {
     private var idIn: List<String>? = null
     private var destinationId: Long? = null
-    fun getHotels(hotelService: HotelService): List<Hotel> {
-        return hotelService.getHotels()
+    fun apply(hotels: List<Hotel>): List<Hotel> {
+        return hotels
             .filter { hotel -> idIn?.contains(hotel.id) ?: true }
             .filter { hotel -> destinationId?.let { hotel.destinationId == it } ?: true }
     }
