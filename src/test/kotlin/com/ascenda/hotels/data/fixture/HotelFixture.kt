@@ -1,8 +1,20 @@
 package com.ascenda.hotels.data.fixture
 
-import com.ascenda.hotels.data.client.response.*
+import com.ascenda.hotels.data.client.response.AcmeHotel
+import com.ascenda.hotels.data.client.response.PaperFlyAmenities
+import com.ascenda.hotels.data.client.response.PaperFlyHotel
+import com.ascenda.hotels.data.client.response.PaperFlyImage
+import com.ascenda.hotels.data.client.response.PaperFlyImages
+import com.ascenda.hotels.data.client.response.PaperFlyLocation
+import com.ascenda.hotels.data.client.response.PatagoniaHotel
+import com.ascenda.hotels.data.client.response.PatagoniaImage
+import com.ascenda.hotels.data.client.response.PatagoniaImages
 import com.ascenda.hotels.data.service.converter.EMPTY_FALLBACK_STRING
-import com.ascenda.hotels.data.service.model.*
+import com.ascenda.hotels.data.service.model.Amenities
+import com.ascenda.hotels.data.service.model.Hotel
+import com.ascenda.hotels.data.service.model.Image
+import com.ascenda.hotels.data.service.model.Images
+import com.ascenda.hotels.data.service.model.Location
 import java.math.BigDecimal
 
 object HotelFixture {
@@ -55,20 +67,25 @@ object HotelFixture {
     )
 
     val hotelAcmeBeachVilla = Hotel(
-        id = "iJhz", destinationId = 5432, name = "Beach Villas Singapore", location = Location(
+        id = "iJhz", destinationId = 5432, name = "Beach Villas Singapore",
+        location = Location(
             latitude = BigDecimal("1.264751"),
             longitude = BigDecimal("103.824006"),
             address = "8 Sentosa Gateway, Beach Villas",
             city = "Singapore",
             country = "Singapore",
-        ), amenities = Amenities(
+        ),
+        amenities = Amenities(
             general = listOf(
                 "pool", "business center", "wi fi", "dry cleaning", "breakfast"
             ),
             room = emptyList()
-        ), description = "This 5 star hotel is located on the coastline of Singapore.", images = Images(
+        ),
+        description = "This 5 star hotel is located on the coastline of Singapore.",
+        images = Images(
             rooms = emptyList(), sites = emptyList(), amenities = emptyList()
-        ), bookingConditions = emptyList()
+        ),
+        bookingConditions = emptyList()
     )
 
     val hotelAcmeInterContinental = Hotel(
@@ -85,7 +102,8 @@ object HotelFixture {
         amenities = Amenities(
             general = listOf(
                 "pool", "wi fi", "aircon", "business center", "bath tub", "breakfast", "dry cleaning", "bar"
-            ), room = emptyList()
+            ),
+            room = emptyList()
         ),
         description = "Enjoy sophisticated waterfront living at the new InterContinental® Singapore Robertson Quay, luxury's preferred address nestled in the heart of Robertson Quay along the Singapore River, with the CBD just five minutes drive away. Magnifying the comforts of home, each of our 225 studios and suites features a host of thoughtful amenities that combine modernity with elegance, whilst maintaining functional practicality. The hotel also features a chic, luxurious Club InterContinental Lounge.",
         images = Images(
@@ -108,7 +126,8 @@ object HotelFixture {
         amenities = Amenities(
             general = listOf(
                 "pool", "wi fi", "business center", "dry cleaning", "breakfast", "bar", "bath tub"
-            ), room = emptyList()
+            ),
+            room = emptyList()
         ),
         description = "Hilton Tokyo is located in Shinjuku, the heart of Tokyo's business, shopping and entertainment district, and is an ideal place to experience modern Japan. A complimentary shuttle operates between the hotel and Shinjuku station and the Tokyo Metro subway is connected to the hotel. Relax in one of the modern Japanese-style rooms and admire stunning city views. The hotel offers WiFi and internet access throughout all rooms and public space.",
         images = Images(
@@ -132,13 +151,16 @@ object HotelFixture {
             rooms = listOf(
                 PatagoniaImage(
                     url = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/2.jpg", description = "Double room"
-                ), PatagoniaImage(
+                ),
+                PatagoniaImage(
                     url = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/4.jpg", description = "Bathroom"
                 )
-            ), amenities = listOf(
+            ),
+            amenities = listOf(
                 PatagoniaImage(
                     url = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/0.jpg", description = "RWS"
-                ), PatagoniaImage(
+                ),
+                PatagoniaImage(
                     url = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/6.jpg", description = "Sentosa Gateway"
                 )
             )
@@ -158,10 +180,12 @@ object HotelFixture {
             rooms = listOf(
                 PatagoniaImage(
                     url = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i10_m.jpg", description = "Suite"
-                ), PatagoniaImage(
+                ),
+                PatagoniaImage(
                     url = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i11_m.jpg", description = "Suite - Living room"
                 )
-            ), amenities = listOf(
+            ),
+            amenities = listOf(
                 PatagoniaImage(
                     url = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i57_m.jpg", description = "Bar"
                 )
@@ -181,7 +205,8 @@ object HotelFixture {
             country = EMPTY_FALLBACK_STRING,
         ),
         amenities = Amenities(
-            general = emptyList(), room = listOf(
+            general = emptyList(),
+            room = listOf(
                 "aircon", "tv", "coffee machine", "kettle", "hair dryer", "iron", "tub"
             )
         ),
@@ -190,13 +215,17 @@ object HotelFixture {
             rooms = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/2.jpg", description = "Double room"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/4.jpg", description = "Bathroom"
                 )
-            ), sites = emptyList(), amenities = listOf(
+            ),
+            sites = emptyList(),
+            amenities = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/0.jpg", description = "RWS"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/6.jpg", description = "Sentosa Gateway"
                 )
             )
@@ -205,27 +234,35 @@ object HotelFixture {
     )
 
     val hotelPatagoniaHiltonShinjukuTokyo = Hotel(
-        id = "f8c9", destinationId = 1122, name = "Hilton Tokyo Shinjuku", location = Location(
+        id = "f8c9", destinationId = 1122, name = "Hilton Tokyo Shinjuku",
+        location = Location(
             latitude = BigDecimal("35.6926"),
             longitude = BigDecimal("139.690965"),
             address = EMPTY_FALLBACK_STRING,
             city = EMPTY_FALLBACK_STRING,
             country = EMPTY_FALLBACK_STRING,
-        ), amenities = Amenities(
+        ),
+        amenities = Amenities(
             general = emptyList(), room = emptyList()
-        ), description = EMPTY_FALLBACK_STRING, images = Images(
+        ),
+        description = EMPTY_FALLBACK_STRING,
+        images = Images(
             rooms = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i10_m.jpg", description = "Suite"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i11_m.jpg", description = "Suite - Living room"
                 )
-            ), sites = emptyList(), amenities = listOf(
+            ),
+            sites = emptyList(),
+            amenities = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i57_m.jpg", description = "Bar"
                 )
             )
-        ), bookingConditions = emptyList()
+        ),
+        bookingConditions = emptyList()
     )
 
     val paperFlyBeachVilla = PaperFlyHotel(
@@ -240,7 +277,8 @@ object HotelFixture {
         amenities = PaperFlyAmenities(
             general = listOf(
                 "outdoor pool", "indoor pool", "business center", "childcare"
-            ), room = listOf(
+            ),
+            room = listOf(
                 "tv", "coffee machine", "kettle", "hair dryer", "iron"
             )
         ),
@@ -252,7 +290,8 @@ object HotelFixture {
                 PaperFlyImage(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/3.jpg", caption = "Double room"
                 )
-            ), sites = listOf(
+            ),
+            sites = listOf(
                 PaperFlyImage(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/1.jpg", caption = "Front"
                 )
@@ -282,7 +321,8 @@ object HotelFixture {
         amenities = Amenities(
             general = listOf(
                 "outdoor pool", "indoor pool", "business center", "childcare"
-            ), room = listOf(
+            ),
+            room = listOf(
                 "tv", "coffee machine", "kettle", "hair dryer", "iron"
             )
         ),
@@ -290,14 +330,17 @@ object HotelFixture {
             rooms = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/2.jpg", description = "Double room"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/3.jpg", description = "Double room"
                 )
-            ), sites = listOf(
+            ),
+            sites = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/1.jpg", description = "Front"
                 )
-            ), amenities = emptyList()
+            ),
+            amenities = emptyList()
         ),
         bookingConditions = listOf(
             "All children are welcome. One child under 12 years stays free of charge when using existing beds. One child under 2 years stays free of charge in a child's cot/crib. One child under 4 years stays free of charge when using existing beds. One older child or adult is charged SGD 82.39 per person per night in an extra bed. The maximum number of children's cots/cribs in a room is 1. There is no capacity for extra beds in the room.",
@@ -330,7 +373,8 @@ object HotelFixture {
                 "dry cleaning",
                 "outdoor pool",
                 "business center"
-            ), room = listOf(
+            ),
+            room = listOf(
                 "tv", "tub", "iron", "aircon", "kettle", "hair dryer", "coffee machine"
             )
         ),
@@ -338,16 +382,20 @@ object HotelFixture {
             rooms = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/2.jpg", description = "Double room"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/4.jpg", description = "Bathroom"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/3.jpg", description = "Double room"
                 )
-            ), sites = listOf(
+            ),
+            sites = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/1.jpg", description = "Front"
                 )
-            ), amenities = listOf(
+            ),
+            amenities = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/0qZF/0.jpg", description = "RWS"
                 ),
@@ -400,20 +448,26 @@ object HotelFixture {
             rooms = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i93_m.jpg", description = "Double room"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i94_m.jpg", description = "Bathroom"
                 )
-            ), sites = listOf(
+            ),
+            sites = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i1_m.jpg", description = "Restaurant"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i2_m.jpg", description = "Hotel Exterior"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i5_m.jpg", description = "Entrance"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i24_m.jpg", description = "Bar"
                 )
-            ), amenities = emptyList()
+            ),
+            amenities = emptyList()
         ),
         description = "InterContinental Singapore Robertson Quay is luxury's preferred address offering stylishly cosmopolitan riverside living for discerning travelers to Singapore. Prominently situated along the Singapore River, the 225-room inspiring luxury hotel is easily accessible to the Marina Bay Financial District, Central Business District, Orchard Road and Singapore Changi International Airport, all located a short drive away. The hotel features the latest in Club InterContinental design and service experience, and five dining options including Publico, an Italian landmark dining and entertainment destination by the waterfront.",
         bookingConditions = emptyList()
@@ -454,20 +508,26 @@ object HotelFixture {
             rooms = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i93_m.jpg", description = "Double room"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i94_m.jpg", description = "Bathroom"
                 )
-            ), sites = listOf(
+            ),
+            sites = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i1_m.jpg", description = "Restaurant"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i2_m.jpg", description = "Hotel Exterior"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i5_m.jpg", description = "Entrance"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/Sjym/i24_m.jpg", description = "Bar"
                 )
-            ), amenities = emptyList()
+            ),
+            amenities = emptyList()
         ),
         bookingConditions = emptyList()
     )
@@ -489,7 +549,8 @@ object HotelFixture {
                 "indoor pool",
                 "business center",
                 "wifi"
-            ), room = listOf(
+            ),
+            room = listOf(
                 "tv",
                 "aircon",
                 "minibar",
@@ -501,14 +562,17 @@ object HotelFixture {
             rooms = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i1_m.jpg", description = "Suite"
-                ), Image(
+                ),
+                Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i15_m.jpg", description = "Double room"
                 )
-            ), sites = listOf(
+            ),
+            sites = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i55_m.jpg", description = "Bar"
                 )
-            ), amenities = emptyList()
+            ),
+            amenities = emptyList()
         ),
         bookingConditions = listOf(
             "All children are welcome. One child under 6 years stays free of charge when using existing beds. There is no capacity for extra beds in the room.",
@@ -529,20 +593,25 @@ object HotelFixture {
             longitude = BigDecimal("139.690965"),
             address = "160-0023, SHINJUKU-KU, 6-6-2 NISHI-SHINJUKU, JAPAN",
             city = "Tokyo",
-            country = "Japan"),
+            country = "Japan"
+        ),
         amenities = Amenities(
-            general = listOf("bar", "pool", "wifi", "bath tub", "breakfast", "indoor pool", "dry cleaning", "business center"
-            ), room = listOf("tv", "aircon", "minibar", "bathtub", "hair dryer")
+            general = listOf(
+                "bar", "pool", "wifi", "bath tub", "breakfast", "indoor pool", "dry cleaning", "business center"
+            ),
+            room = listOf("tv", "aircon", "minibar", "bathtub", "hair dryer")
         ),
         description = "This sleek high-rise property is 10 minutes' walk from Shinjuku train station, 6 minutes' walk from the Tokyo Metropolitan Government Building and 3 km from Yoyogi Park. The polished rooms offer Wi-Fi and flat-screen TVs, plus minibars, sitting areas, and tea and coffeemaking facilities. Suites add living rooms, and access to a club lounge serving breakfast and cocktails. A free shuttle to Shinjuku station is offered. There's a chic Chinese restaurant, a sushi bar, and a grill restaurant with an open kitchen, as well as an English pub and a hip cocktail lounge. Other amenities include a gym, rooftop tennis courts, and a spa with an indoor pool.",
         images = Images(
             rooms = listOf(
-                Image(link="https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i10_m.jpg", description="Suite"), Image(link="https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i11_m.jpg", description="Suite - Living room"), Image(link="https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i1_m.jpg", description="Suite"), Image(link="https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i15_m.jpg", description="Double room")
-            ), sites = listOf(
+                Image(link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i10_m.jpg", description = "Suite"), Image(link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i11_m.jpg", description = "Suite - Living room"), Image(link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i1_m.jpg", description = "Suite"), Image(link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i15_m.jpg", description = "Double room")
+            ),
+            sites = listOf(
                 Image(
                     link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i55_m.jpg", description = "Bar"
                 )
-            ), amenities = listOf(Image(link="https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i57_m.jpg", description="Bar"))
+            ),
+            amenities = listOf(Image(link = "https://d2ey9sqrvkqdfs.cloudfront.net/YwAr/i57_m.jpg", description = "Bar"))
         ),
         bookingConditions = listOf(
             "All children are welcome. One child under 6 years stays free of charge when using existing beds. There is no capacity for extra beds in the room.",

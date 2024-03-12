@@ -1,7 +1,6 @@
 package com.ascenda.hotels.data.functional
 
 import org.junit.jupiter.api.Test
-import org.springframework.http.MediaType
 
 class SwaggerUiTests : FunctionalTestBase() {
     @Test

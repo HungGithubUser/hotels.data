@@ -4,11 +4,11 @@ import com.ascenda.hotels.data.client.response.AcmeHotel
 import com.ascenda.hotels.data.client.response.PaperFlyHotel
 import com.ascenda.hotels.data.client.response.PatagoniaHotel
 import com.ascenda.hotels.data.config.SupplierConfiguration
-import com.ascenda.hotels.data.config.SupplierName.*
-import org.springframework.http.MediaType
+import com.ascenda.hotels.data.config.SupplierName.ACME
+import com.ascenda.hotels.data.config.SupplierName.PAPERFLY
+import com.ascenda.hotels.data.config.SupplierName.PATAGONIA
 import org.springframework.http.MediaType.APPLICATION_JSON
 import org.springframework.stereotype.Service
-import org.springframework.web.client.RestTemplate
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.awaitBody
 

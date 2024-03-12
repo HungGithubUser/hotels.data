@@ -26,6 +26,4 @@ class HotelService(
             async { hotelSupplierClient.getPaperFlyHotels().map { paperFlyHotelConverter.convert(it) } }
         hotelMerger.merge(acmeHotels.await() + patagoniaHotels.await() + paperFlyHotels.await())
     }
-
 }
-

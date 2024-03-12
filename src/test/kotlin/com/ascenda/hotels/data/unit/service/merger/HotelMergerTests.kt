@@ -34,7 +34,8 @@ class HotelMergerTests {
             )
         )
         assertThat(
-            actualMergedHotel, equalTo(
+            actualMergedHotel,
+            equalTo(
                 listOf(
                     hotelBeachVilla,
                     hotelInterContinental,
@@ -44,4 +45,3 @@ class HotelMergerTests {
         )
     }
 }
-

@@ -7,7 +7,6 @@ import com.ascenda.hotels.data.service.HotelQueryBuilder
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
 import org.junit.jupiter.api.Test
-import org.mockito.kotlin.whenever
 
 class HotelQueryBuilderTest {
 
@@ -31,7 +30,8 @@ class HotelQueryBuilderTest {
                 hotelBeachVilla,
                 hotelInterContinental,
                 hotelHiltonShinjukuTokyo
-            ))
+            )
+        )
         assertThat(actual, equalTo(listOf(hotelBeachVilla)))
     }
 
@@ -42,7 +42,8 @@ class HotelQueryBuilderTest {
                 hotelBeachVilla,
                 hotelInterContinental,
                 hotelHiltonShinjukuTokyo
-            ))
+            )
+        )
         assertThat(actual, equalTo(listOf(hotelBeachVilla, hotelInterContinental)))
     }
 
@@ -53,7 +54,8 @@ class HotelQueryBuilderTest {
                 hotelBeachVilla,
                 hotelInterContinental,
                 hotelHiltonShinjukuTokyo
-            ))
+            )
+        )
         assertThat(actual, equalTo(listOf(hotelBeachVilla, hotelInterContinental)))
     }
 }

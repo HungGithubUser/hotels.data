@@ -1,7 +1,11 @@
 package com.ascenda.hotels.data.service.converter
 
 import com.ascenda.hotels.data.client.response.PatagoniaHotel
-import com.ascenda.hotels.data.service.model.*
+import com.ascenda.hotels.data.service.model.Amenities
+import com.ascenda.hotels.data.service.model.Hotel
+import com.ascenda.hotels.data.service.model.Image
+import com.ascenda.hotels.data.service.model.Images
+import com.ascenda.hotels.data.service.model.Location
 import org.springframework.stereotype.Component
 
 @Component
@@ -31,5 +35,4 @@ class PatagoniaHotelConverter {
             bookingConditions = emptyList(),
         )
     }
-
 }

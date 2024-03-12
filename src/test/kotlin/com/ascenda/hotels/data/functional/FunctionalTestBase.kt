@@ -9,13 +9,11 @@ import org.mockserver.model.HttpResponse
 import org.mockserver.model.JsonBody
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 import org.springframework.test.web.reactive.server.WebTestClient
-import org.springframework.test.web.servlet.MockMvc
 import org.testcontainers.containers.MockServerContainer
 import org.testcontainers.utility.DockerImageName
 
@@ -97,4 +95,3 @@ class HotelServersStub(private val mockServer: MockServerContainer) {
             )
     }
 }
-

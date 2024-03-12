@@ -6,7 +6,7 @@ import org.hamcrest.Matchers
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
-class SupplierConfigurationTests: FunctionalTestBase() {
+class SupplierConfigurationTests : FunctionalTestBase() {
     @Autowired
     lateinit var supplierConfiguration: SupplierConfiguration
 

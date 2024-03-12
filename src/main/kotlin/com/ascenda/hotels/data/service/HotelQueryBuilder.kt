@@ -20,5 +20,4 @@ class HotelQueryBuilder {
         destinationId = id
         return this
     }
-
 }

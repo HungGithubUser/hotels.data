@@ -1,0 +1,58 @@
+apply plugin: 'jacoco'
+
+ext {
+    limits = [
+            'INSTRUCTION': 0.9,
+            'LINE'       : 0.8,
+            'BRANCH'     : 0.7,
+            'CLASS'      : 0.9,
+            'METHOD'     : 0.9,
+    ]
+}
+
+test {
+    useJUnitPlatform()
+    failFast = false
+    testLogging {
+        showStandardStreams = true
+    }
+    jacoco{
+        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+    }
+    minHeapSize = "1024m"
+    maxHeapSize = "2048m"
+}
+
+jacoco {
+    toolVersion = "0.8.10"
+}
+
+jacocoTestCoverageVerification{
+    violationRules {
+        limits.each {
+            constraint ->
+                rule {
+                    enabled = true
+                    element = 'CLASS'
+                    excludes = [
+                            'com.ascenda.hotels.data.Application*'
+                    ]
+                    limit {
+                        counter = constraint.key
+                        value = 'COVEREDRATIO'
+                        minimum = constraint.value as BigDecimal
+                    }
+                }
+        }
+    }
+}
+
+jacocoTestReport{
+    group = "Reporting"
+    reports {
+        html.destination = file("$buildDir/reports/jacoco")
+    }
+}
+
+test.finalizedBy jacocoTestReport
+check.dependsOn jacocoTestCoverageVerification

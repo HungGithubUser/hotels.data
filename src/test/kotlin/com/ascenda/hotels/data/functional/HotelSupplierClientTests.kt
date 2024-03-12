@@ -26,18 +26,18 @@ class HotelSupplierClientTests : FunctionalTestBase() {
     @Test
     fun `should getAcmeHotels successfully`() = runBlocking {
         val acmeHotels = hotelSupplierClient.getAcmeHotels()
-        assertThat(acmeHotels.isEmpty(),equalTo(false))
+        assertThat(acmeHotels.isEmpty(), equalTo(false))
     }
 
     @Test
     fun `should getPatagoniaHotels successfully`() = runBlocking {
         val patagoniaHotels = hotelSupplierClient.getPatagoniaHotels()
-        assertThat(patagoniaHotels.isEmpty(),equalTo(false))
+        assertThat(patagoniaHotels.isEmpty(), equalTo(false))
     }
 
     @Test
     fun `should getPaperFlyHotels successfully`() = runBlocking {
         val paperFlyHotels = hotelSupplierClient.getPaperFlyHotels()
-        assertThat(paperFlyHotels.isEmpty(),equalTo(false))
+        assertThat(paperFlyHotels.isEmpty(), equalTo(false))
     }
 }

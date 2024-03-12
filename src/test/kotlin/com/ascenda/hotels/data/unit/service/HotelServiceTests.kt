@@ -61,18 +61,17 @@ class HotelServiceTests {
         assertThat(actual, equalTo(listOf(hotelBeachVilla)))
     }
 
-
     @Test
     fun `should query sources asynchronously`() = runBlocking {
-        whenever(hotelSupplierClient.getAcmeHotels()).doSuspendableAnswer{
+        whenever(hotelSupplierClient.getAcmeHotels()).doSuspendableAnswer {
             delay(1000)
             listOf(acmeBeachVilla)
         }
-        whenever(hotelSupplierClient.getPatagoniaHotels()).doSuspendableAnswer{
+        whenever(hotelSupplierClient.getPatagoniaHotels()).doSuspendableAnswer {
             delay(2000)
             listOf(patagoniaBeachVilla)
         }
-        whenever(hotelSupplierClient.getPaperFlyHotels()).doSuspendableAnswer{
+        whenever(hotelSupplierClient.getPaperFlyHotels()).doSuspendableAnswer {
             delay(3000)
             listOf(paperFlyBeachVilla)
         }

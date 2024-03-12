@@ -1,7 +1,7 @@
 package com.ascenda.hotels.data.unit.service.converter
 
-import com.ascenda.hotels.data.service.converter.AcmeHotelConverter
 import com.ascenda.hotels.data.fixture.HotelFixture
+import com.ascenda.hotels.data.service.converter.AcmeHotelConverter
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers
 import org.junit.jupiter.api.Test
@@ -36,7 +36,7 @@ class AcmeHotelConverterTests {
     }
 
     @Test
-    fun `should return empty country if not in map`(){
+    fun `should return empty country if not in map`() {
         val expectedHotel = HotelFixture.hotelAcmeBeachVilla.copy(location = HotelFixture.hotelAcmeBeachVilla.location.copy(country = ""))
         val actualHotel = converter.convert(HotelFixture.acmeBeachVilla.copy(country = "XX"))
         assertThat(actualHotel, Matchers.equalTo(expectedHotel))

@@ -12,7 +12,7 @@ data class HotelResponse(
     val amenities: AmenitiesResponse,
     val images: ImagesResponse,
     val bookingConditions: List<String>
-){
+) {
     constructor(hotel: Hotel) : this(
         hotel.id,
         hotel.destinationId,
